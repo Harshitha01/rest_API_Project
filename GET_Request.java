@@ -2,7 +2,7 @@ package rest_API_Project;
 
 import static io.restassured.RestAssured.given;
 
-import java.util.List;
+//import java.util.List;
 
 import org.testng.annotations.Test;
 
@@ -16,7 +16,7 @@ public class GET_Request {
 		RestAssured.baseURI = "https://petstore.swagger.io" ;
 		
 		Response response = given()
-				.queryParam("status","available")
+				.queryParam("status","sold")
 				.log().all()
 				.when()
 				.get("/v2/pet/findByStatus").then().statusCode(200)
